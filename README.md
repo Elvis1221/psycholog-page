@@ -1,2 +1,0 @@
-# psycholog-page
-Test work
