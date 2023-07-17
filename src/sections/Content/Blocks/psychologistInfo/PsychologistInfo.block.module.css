@@ -1,0 +1,30 @@
+.PsychologistInfoWrapper {
+    margin-bottom: 2rem;
+}
+
+.FirstPart {
+    grid-area: first;
+    border: 1px solid var(--secondary-dark);
+
+}
+
+.SecondPart {
+    grid-area: second;
+    border: 1px solid var(--secondary-dark);
+
+}
+
+.PsychologistInfoContent {
+    display: grid;
+    grid-template-areas:
+    'first second';
+    gap: 0.7rem;
+    border: 1px solid var(--secondary-dark);
+    padding: 1rem;
+    background: var(--bisque);
+}
+
+.PsychologistInfoContent > div {
+    text-align: center;
+    padding: 1rem 0;
+}

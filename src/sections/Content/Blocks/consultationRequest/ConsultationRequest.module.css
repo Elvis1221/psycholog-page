@@ -1,0 +1,24 @@
+.FirstPart {
+    grid-area: first
+}
+
+.SecondPart {
+    grid-area: second
+}
+
+.AcquaintanceContent {
+    display: grid;
+    grid-template-areas:
+    'first second';
+    gap: 5px;
+    border: 1px solid bisque;
+    padding: 10px;
+    background: bisque;
+}
+
+.AcquaintanceContent > div {
+    background-color: rgba(255, 255, 255, 0.63);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+}

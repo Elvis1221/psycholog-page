@@ -1,10 +1,19 @@
 import { FC } from 'react';
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+
+import { Header } from './sections/Header';
+import { Footer } from './sections/Footer/Footer.tsx';
+import { Content } from './sections/Content';
+
 import './App.css';
 
 const App: FC = () => {
-  return <div>test</div>;
+  return (
+    <>
+      <Header />
+      <Content />
+      <Footer />
+    </>
+  );
 };
 
 export default App;

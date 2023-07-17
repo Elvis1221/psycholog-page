@@ -1,0 +1,5 @@
+.BlockText {
+    /*font-weight: var(--secondary-dark);*/
+    font-size: var(--font-size-m);
+    font-family: var(--font-family-roboto);
+}
