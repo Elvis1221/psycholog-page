@@ -1,16 +1,16 @@
 .FooterWrapper {
-    background: var(--grey-opacity);
+    background: var(--grey-transparent);
+    padding:0.5rem;
 }
 
 .ContactInfo p {
-    font-size: 18px;
-    margin-top: 20px;
+    font-size: var(--font-size-l);
 }
 
 .SocialLinks {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 1rem;
 }
 
 .SocialLinks a {

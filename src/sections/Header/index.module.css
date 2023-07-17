@@ -1,7 +1,11 @@
 .Header {
-    /*background: aquamarine;*/
+    background: var(--grey-transparent);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-bottom: 1px solid var(--grey-opacity);
+    padding-bottom: 0.5rem;
+}
+
+.HeaderWrapper {
+
 }

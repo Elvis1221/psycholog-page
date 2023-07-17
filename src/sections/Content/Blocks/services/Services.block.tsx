@@ -3,6 +3,7 @@ import { FC } from 'react';
 import css from './Services.block.module.css';
 import BlockTitle from '../../../../components/BlockTitle/BlockTitle.tsx';
 import BlockText from '../../../../components/BlockText/BlockText.tsx';
+import ConsultationRequest from '../consultationRequest/ConsultationRequest.tsx';
 
 export const ServicesBlock: FC = () => {
   return (
@@ -34,6 +35,7 @@ export const ServicesBlock: FC = () => {
         <div className={css.SecondPart}>
           <section className="order-form">
             <div className="success-message">Thank you for your submission!</div>
+            <ConsultationRequest />
           </section>
         </div>
         <div className={css.ThirdPart}>
