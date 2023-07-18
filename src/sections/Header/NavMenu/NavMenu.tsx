@@ -17,15 +17,15 @@ export const NavMenu: FC = () => {
   ];
 
   return (
-    <div className={css.NavMenuWrapper}>
-      <ul className={css.NavMenuContent}>
-        {menuItems.map((item, index) => (
-          <li className={css.Link} key={index}>
-            {item.title}
-          </li>
-        ))}
-      </ul>
-    </div>
+    // <div className={css.NavMenuWrapper}>
+    <ul className={css.NavMenuContent}>
+      {menuItems.map((item, index) => (
+        <li className={css.Link} key={index}>
+          {item.title}
+        </li>
+      ))}
+    </ul>
+    // </div>
   );
 };
 

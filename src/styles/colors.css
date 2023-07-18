@@ -2,6 +2,9 @@
     --blue: deepskyblue;
     --bisque: bisque;
     --blue-opacity: rgba(75, 155, 250, 0.7);
+
+    --nav: rgba(248, 156, 14, 0.93);
+
     --grey-opacity: rgba(75, 81, 104, 0.7);
     --grey-transparent: rgba(75, 81, 104, 0.15);
     --gray: rgba(75, 81, 104, 1);

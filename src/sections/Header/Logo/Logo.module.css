@@ -1,6 +1,7 @@
 .LogoWrapper {
-    background: rebeccapurple;
-    font-size: 24px;
-    font-weight: bold;
-    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    /*background: rebeccapurple;*/
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
 }

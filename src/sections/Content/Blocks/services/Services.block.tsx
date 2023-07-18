@@ -4,6 +4,7 @@ import css from './Services.block.module.css';
 import BlockTitle from '../../../../components/BlockTitle/BlockTitle.tsx';
 import BlockText from '../../../../components/BlockText/BlockText.tsx';
 import ConsultationRequest from '../consultationRequest/ConsultationRequest.tsx';
+import FeedbackForm from '../feedBack/FeedBackForm.tsx';
 
 export const ServicesBlock: FC = () => {
   return (
@@ -33,19 +34,10 @@ export const ServicesBlock: FC = () => {
           </BlockText>
         </div>
         <div className={css.SecondPart}>
-          <section className="order-form">
-            <div className="success-message">Thank you for your submission!</div>
-            <ConsultationRequest />
-          </section>
+          <ConsultationRequest />
         </div>
         <div className={css.ThirdPart}>
-          <BlockText>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio doloremque eum
-            mollitia placeat quia recusandae sequi! Ab adipisci at beatae dolore, explicabo labore
-            magni maiores maxime natus nihil officiis optio quae quis quod quos sequi unde
-            voluptates voluptatum! Amet ducimus eligendi ipsam modi neque officia quo quod ratione
-            tempora vel!
-          </BlockText>
+          <FeedbackForm />
         </div>
       </div>
     </div>

@@ -1,34 +1,27 @@
-import { FORM_LABELS, PLACE_HOLDER, VALIDATION_MESSAGES } from '../../../../constants';
+import { PATTERNS, PLACE_HOLDER, VALIDATION_MESSAGES } from '../../../../constants';
 
-enum RegistrationFormNameEnum {
+export enum RegistrationFormNameEnum {
     email = 'email',
     firstName = 'firstName',
     lastName = 'lastName',
     phoneNumber = 'phoneNumber',
-    password = 'password',
-    repeatPassword = 'repeatPassword',
 }
 
-enum InputTypes {
+export enum InputTypes {
     text = 'text',
-    password = 'password',
     tel = 'tel',
-    file = 'file',
-    date = 'date',
     email = 'email',
 }
 
-export type RegistrationFormValues = {
+export type ConsultationFormFields = {
     [RegistrationFormNameEnum.email]: string;
     [RegistrationFormNameEnum.firstName]: string;
     [RegistrationFormNameEnum.lastName]: string;
     [RegistrationFormNameEnum.phoneNumber]: string;
-    [RegistrationFormNameEnum.password]: string;
-    [RegistrationFormNameEnum.repeatPassword]: string;
 };
 
 export type EntreFormField = {
-    label: string;
+    label?: string;
     name: RegistrationFormNameEnum;
     type: string;
     errorMessages: string;
@@ -37,9 +30,9 @@ export type EntreFormField = {
     pattern?: any;
 };
 
-export const registrationFormFieldsArr: EntreFormField[] = [
+export const consultationFormFieldsArr: EntreFormField[] = [
     {
-        label: FORM_LABELS.FIRST_NAME,
+        // label: FORM_LABELS.FIRST_NAME,
         type: InputTypes.text,
         name: RegistrationFormNameEnum.firstName,
         placeholder: PLACE_HOLDER.ENTER_NAME,
@@ -47,7 +40,7 @@ export const registrationFormFieldsArr: EntreFormField[] = [
         required: true,
     },
     {
-        label: FORM_LABELS.LAST_NAME,
+        // label: FORM_LABELS.LAST_NAME,
         type: InputTypes.text,
         name: RegistrationFormNameEnum.lastName,
         placeholder: PLACE_HOLDER.ENTER_LAST_NAME,
@@ -55,16 +48,16 @@ export const registrationFormFieldsArr: EntreFormField[] = [
         required: true,
     },
     {
-        label: FORM_LABELS.EMAIL,
+        // label: FORM_LABELS.EMAIL,
         type: InputTypes.email,
         name: RegistrationFormNameEnum.email,
         placeholder: PLACE_HOLDER.ENTER_EMAIL,
         errorMessages: VALIDATION_MESSAGES.REQUIRED_FIELD,
-        // pattern: PATTERNS.EMAIL,
+        pattern: PATTERNS.EMAIL,
         required: true,
     },
     {
-        label: FORM_LABELS.PHONE_NUMBER,
+        // label: FORM_LABELS.PHONE_NUMBER,
         type: InputTypes.tel,
         name: RegistrationFormNameEnum.phoneNumber,
         placeholder: PLACE_HOLDER.ENTER_PHONE_NUMBER,
@@ -72,22 +65,4 @@ export const registrationFormFieldsArr: EntreFormField[] = [
         // pattern: PATTERNS.PHONE_NUMBER,
         required: true,
     },
-    // {
-    //     label: FORM_LABELS.PASSWORD,
-    //     type: InputTypes.password,
-    //     name: RegistrationFormNameEnum.password,
-    //     placeholder: PLACE_HOLDER.PASSWORD,
-    //     errorMessages: VALIDATION_MESSAGES.REQUIRED_FIELD,
-    //     // pattern: PATTERNS.PASSWORD,
-    //     required: true,
-    // },
-    // {
-    //     label: FORM_LABELS.REPEAT_PASSWORD,
-    //     type: InputTypes.password,
-    //     name: RegistrationFormNameEnum.repeatPassword,
-    //     placeholder: PLACE_HOLDER.REPEAT_PASSWORD,
-    //     errorMessages: VALIDATION_MESSAGES.REQUIRED_FIELD,
-    //     // pattern: PATTERNS.PASSWORD,
-    //     required: true,
-    // },
 ];

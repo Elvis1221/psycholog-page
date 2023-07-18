@@ -1,0 +1,63 @@
+.FeedbackWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px;
+  min-width: 25rem;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0069d9;
+}
+
+.Input, textarea {
+  width: 20rem;
+  border: 1px solid #ccdbec;
+  box-sizing: border-box;
+  border-radius: 4px;
+  color: var(--gray);
+  outline: none;
+  font-family: var(--font-family-roboto);
+}
+
+.Input:required:valid {
+  border-color: green;
+}
+
+.Input:hover {
+  border-color: var(--blue-opacity);
+}
+
+textarea:hover {
+  border-color: var(--blue-opacity);
+}
+
+.ErrorMessage {
+  color: var(--red);
+  font-size: var(--font-size-xxs);
+}
+
+.InputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  /*margin: 0.1rem 0 0.4rem 0;*/
+  /*height: 3.5rem;*/
+}
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  min-width: 25rem;
+  align-items: center;
+}

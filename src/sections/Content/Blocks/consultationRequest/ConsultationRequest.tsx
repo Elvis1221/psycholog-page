@@ -5,30 +5,33 @@ import Button, { ButtonsType } from '../../../../components/Button/Buttons.tsx';
 
 import {
   EntreFormField,
-  registrationFormFieldsArr,
-  RegistrationFormValues,
+  consultationFormFieldsArr,
+  ConsultationFormFields,
 } from './consultationFormFieldsArr';
-import { BUTTONS_TITLE } from '../../../../constants';
+import { BUTTONS_TITLE, PLACE_HOLDER, VALIDATION_MESSAGES } from '../../../../constants';
 
 import css from './ConsultationRequest.module.css';
+import FormTitle from '../../../../components/FormTitle/FormTitle.tsx';
 
 const ConsultationRequest: React.FC = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isValid },
-  } = useForm<RegistrationFormValues>();
+  } = useForm<ConsultationFormFields, { comment: string }>();
 
-  const onSubmit: SubmitHandler<RegistrationFormValues> = data => {
-    console.log(data);
+  const onSubmit: SubmitHandler<ConsultationFormFields> = data => {
+    alert(JSON.stringify(data));
+    reset();
   };
 
-  //todo:Fix the form
   return (
-    <>
-      <form className={css.FormWrapper} onSubmit={handleSubmit(onSubmit)}>
+    <div className={css.ConsultationFormWrapper}>
+      <FormTitle>Please leave feedback</FormTitle>
+      <form className={css.Form} onSubmit={handleSubmit(onSubmit)}>
         <div>
-          {registrationFormFieldsArr.map((item: EntreFormField) => (
+          {consultationFormFieldsArr.map((item: EntreFormField) => (
             <div className={css.InputWrapper}>
               <label className={css.Label}>{item.label}</label>
               <div className={css.InputContainer}>
@@ -44,18 +47,25 @@ const ConsultationRequest: React.FC = () => {
               </div>
             </div>
           ))}
-
-          <textarea color="primary" disabled={false} placeholder="Type some question" />
+          <div className={css.InputContainer}>
+            <textarea
+              className={css.TextArea}
+              placeholder={PLACE_HOLDER.ENTER_QUESTION}
+              {...register('comment', { required: true })}
+            />
+            {errors['comment'] && (
+              <span className={css.ErrorMessage}>{VALIDATION_MESSAGES.REQUIRED_FIELD}</span>
+            )}
+          </div>
         </div>
-
         <Button
-          disabled={!isValid}
+          // disabled={!isValid}
           children={BUTTONS_TITLE.SUBMIT}
           type={ButtonsType.submit}
-          className={css.Button}
+          // className={css.Button}
         />
       </form>
-    </>
+    </div>
   );
 };
 

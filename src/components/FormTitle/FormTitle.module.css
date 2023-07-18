@@ -1,0 +1,7 @@
+.FormTitle {
+    font-weight: var(--font-weight-bold);
+    padding-bottom: 1rem;
+    font-size: var(--font-size-l);
+    font-family:  var(--font-family-roboto);
+    color: var(--gray);
+}
