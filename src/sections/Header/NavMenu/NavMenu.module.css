@@ -1,16 +1,13 @@
-.NavMenuWrapper {
-border-bottom: 1px solid var(--grey-transparent);
-}
-
 .NavMenuContent {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     flex-wrap: nowrap;
+    /*box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);*/
 }
 
-.Link {
+.NavElement {
     display: flex;
     align-items: center;
     width: auto;
@@ -22,12 +19,18 @@ border-bottom: 1px solid var(--grey-transparent);
     font-weight: var(--font-weight-medium);
     position: relative;
     white-space: nowrap;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
 }
 
-.Link:last-child {
+.NavElement:last-child {
     margin-right: 0;
 }
 
-.Link:hover {
-    border-bottom: 2px solid var(--white);
+.NavElement:hover {
+    border-top: 1px solid var(--nav-hover);
+    border-bottom: 1px solid var(--nav-hover);
+    color: var(--nav-hover);
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
 }

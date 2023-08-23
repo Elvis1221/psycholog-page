@@ -5,13 +5,12 @@ import css from './Button.module.css';
 
 export enum ButtonsThemes {
   blue = 'Blue',
-  white = 'White',
+  orange = 'Orange',
 }
 
 export enum ButtonsType {
   button = 'button',
   submit = 'submit',
-  reset = 'reset',
 }
 
 interface IButtonProps extends ComponentProps<'button'> {

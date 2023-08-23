@@ -1,22 +1,23 @@
 .AppointmentWrapper {
     margin-bottom: 2rem;
+
 }
 
 .FirstPart {
     grid-area: first;
-    border: 1px solid var(--secondary-dark);
+    /*border: 1px solid var(--secondary-dark);*/
 
 }
 
 .SecondPart {
     grid-area: second;
-    border: 1px solid var(--secondary-dark);
+    /*border: 1px solid var(--secondary-dark);*/
 
 }
 
 .ThirdPart {
     grid-area: third;
-    border: 1px solid var(--secondary-dark);
+    /*border: 1px solid var(--secondary-dark);*/
 
 }
 
@@ -28,8 +29,11 @@
     'first second third';
     gap: 0.7rem;
     padding: 1rem;
-    border: 1px solid var(--secondary-dark);
+    /*border: 1px solid var(--secondary-dark);*/
     background: var(--blue-opacity);
+    /*background-image: url("https://psy-school.com/ru/images/bg_pattern_01.png?111") ;*/
+
+
 }
 
 .AppointmentContent > div {

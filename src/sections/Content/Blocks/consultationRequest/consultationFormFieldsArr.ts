@@ -1,10 +1,11 @@
 import { PATTERNS, PLACE_HOLDER, VALIDATION_MESSAGES } from '../../../../constants';
 
-export enum RegistrationFormNameEnum {
+export enum ConsultationFormNameEnum {
     email = 'email',
     firstName = 'firstName',
     lastName = 'lastName',
     phoneNumber = 'phoneNumber',
+    message = 'message',
 }
 
 export enum InputTypes {
@@ -13,16 +14,20 @@ export enum InputTypes {
     email = 'email',
 }
 
-export type ConsultationFormFields = {
-    [RegistrationFormNameEnum.email]: string;
-    [RegistrationFormNameEnum.firstName]: string;
-    [RegistrationFormNameEnum.lastName]: string;
-    [RegistrationFormNameEnum.phoneNumber]: string;
+export type ConsultationFormInputs = {
+    [ConsultationFormNameEnum.email]: string;
+    [ConsultationFormNameEnum.firstName]: string;
+    [ConsultationFormNameEnum.lastName]: string;
+    [ConsultationFormNameEnum.phoneNumber]: string;
+};
+
+export type ConsultationFormFields = ConsultationFormInputs & {
+    [ConsultationFormNameEnum.message]: string;
 };
 
 export type EntreFormField = {
     label?: string;
-    name: RegistrationFormNameEnum;
+    name: ConsultationFormNameEnum;
     type: string;
     errorMessages: string;
     required?: boolean;
@@ -34,23 +39,23 @@ export const consultationFormFieldsArr: EntreFormField[] = [
     {
         // label: FORM_LABELS.FIRST_NAME,
         type: InputTypes.text,
-        name: RegistrationFormNameEnum.firstName,
+        name: ConsultationFormNameEnum.firstName,
         placeholder: PLACE_HOLDER.ENTER_NAME,
         errorMessages: VALIDATION_MESSAGES.REQUIRED_FIELD,
         required: true,
     },
-    {
-        // label: FORM_LABELS.LAST_NAME,
-        type: InputTypes.text,
-        name: RegistrationFormNameEnum.lastName,
-        placeholder: PLACE_HOLDER.ENTER_LAST_NAME,
-        errorMessages: VALIDATION_MESSAGES.REQUIRED_FIELD,
-        required: true,
-    },
+    // {
+    //     // label: FORM_LABELS.LAST_NAME,
+    //     type: InputTypes.text,
+    //     name: ConsultationFormNameEnum.lastName,
+    //     placeholder: PLACE_HOLDER.ENTER_LAST_NAME,
+    //     errorMessages: VALIDATION_MESSAGES.REQUIRED_FIELD,
+    //     required: true,
+    // },
     {
         // label: FORM_LABELS.EMAIL,
         type: InputTypes.email,
-        name: RegistrationFormNameEnum.email,
+        name: ConsultationFormNameEnum.email,
         placeholder: PLACE_HOLDER.ENTER_EMAIL,
         errorMessages: VALIDATION_MESSAGES.REQUIRED_FIELD,
         pattern: PATTERNS.EMAIL,
@@ -59,7 +64,7 @@ export const consultationFormFieldsArr: EntreFormField[] = [
     {
         // label: FORM_LABELS.PHONE_NUMBER,
         type: InputTypes.tel,
-        name: RegistrationFormNameEnum.phoneNumber,
+        name: ConsultationFormNameEnum.phoneNumber,
         placeholder: PLACE_HOLDER.ENTER_PHONE_NUMBER,
         errorMessages: VALIDATION_MESSAGES.REQUIRED_FIELD,
         // pattern: PATTERNS.PHONE_NUMBER,

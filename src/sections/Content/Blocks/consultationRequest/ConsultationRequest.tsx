@@ -1,69 +1,68 @@
 import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
-import Button, { ButtonsType } from '../../../../components/Button/Buttons.tsx';
+import Button, { ButtonsThemes, ButtonsType } from '../../../../components/Button/Buttons.tsx';
 
 import {
   EntreFormField,
   consultationFormFieldsArr,
+  ConsultationFormInputs,
   ConsultationFormFields,
 } from './consultationFormFieldsArr';
 import { BUTTONS_TITLE, PLACE_HOLDER, VALIDATION_MESSAGES } from '../../../../constants';
+import { FormDataEnum } from '../feedBack/FeedBackForm.tsx';
 
 import css from './ConsultationRequest.module.css';
-import FormTitle from '../../../../components/FormTitle/FormTitle.tsx';
 
-const ConsultationRequest: React.FC = () => {
+interface ConsultationRequest {
+  isCloseModal?: any;
+}
+
+const ConsultationRequest: React.FC<ConsultationRequest> = ({ isCloseModal }) => {
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isValid },
-  } = useForm<ConsultationFormFields, { comment: string }>();
-
-  const onSubmit: SubmitHandler<ConsultationFormFields> = data => {
+    formState: { errors },
+  } = useForm<ConsultationFormFields>();
+  const onSubmit: SubmitHandler<ConsultationFormInputs> = data => {
     alert(JSON.stringify(data));
     reset();
+    isCloseModal();
   };
 
   return (
-    <div className={css.ConsultationFormWrapper}>
-      <FormTitle>Please leave feedback</FormTitle>
+    <div id={'consultationId'} className={css.ConsultationFormWrapper}>
       <form className={css.Form} onSubmit={handleSubmit(onSubmit)}>
-        <div>
+        <div className={css.FieldsContainer}>
           {consultationFormFieldsArr.map((item: EntreFormField) => (
-            <div className={css.InputWrapper}>
-              <label className={css.Label}>{item.label}</label>
-              <div className={css.InputContainer}>
-                <input
-                  placeholder={item.placeholder}
-                  className={css.Input}
-                  {...register(item.name, { required: item.required })}
-                  pattern={item.pattern}
-                />
-                {errors[item.name] && (
-                  <span className={css.ErrorMessage}>{item.errorMessages}</span>
-                )}
-              </div>
+            <div className={css.InputContainer} key={item.name}>
+              <input
+                placeholder={item.placeholder}
+                className={css.Input}
+                {...register(item.name, { required: item.required })}
+                pattern={item.pattern}
+              />
+              {errors[item.name] && <span className={css.ErrorMessage}>{item.errorMessages}</span>}
             </div>
           ))}
-          <div className={css.InputContainer}>
+          <div className={css.TextareaContainer}>
             <textarea
-              className={css.TextArea}
+              className={css.Textarea}
               placeholder={PLACE_HOLDER.ENTER_QUESTION}
-              {...register('comment', { required: true })}
+              {...register(FormDataEnum.message, { required: true })}
             />
-            {errors['comment'] && (
+            {errors[FormDataEnum.message] && (
               <span className={css.ErrorMessage}>{VALIDATION_MESSAGES.REQUIRED_FIELD}</span>
             )}
           </div>
+          <Button
+            children={BUTTONS_TITLE.BOOK_CONSULTATION}
+            type={ButtonsType.submit}
+            theme={ButtonsThemes.orange}
+            className={css.Button}
+          />
         </div>
-        <Button
-          // disabled={!isValid}
-          children={BUTTONS_TITLE.SUBMIT}
-          type={ButtonsType.submit}
-          // className={css.Button}
-        />
       </form>
     </div>
   );

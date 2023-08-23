@@ -1,10 +1,16 @@
 .FooterWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
     background: var(--grey-opacity);
     padding:0.5rem;
 }
 
-.ContactInfo p {
+.ContactInfo {
     font-size: var(--font-size-l);
+    padding-bottom: 1rem;
+    font-style: italic;
 }
 
 .SocialLinks {
@@ -13,12 +19,21 @@
     margin-top: 1rem;
 }
 
+
+
 .SocialLinks a {
     margin-right: 20px;
     font-size: 24px;
-    color: #007bff;
+    color: var(--consultation-btn-title);
+    text-decoration: none;
 }
 
 .SocialLinks a:hover {
     cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    color: var(--white);
+}
+
+.Button {
+    padding-bottom: 1rem;
 }

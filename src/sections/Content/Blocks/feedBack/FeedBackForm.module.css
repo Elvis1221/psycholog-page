@@ -1,63 +1,68 @@
 .FeedbackWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 20px;
-  min-width: 25rem;
+    width: 100%;
+    height: 80vh;
 }
 
-button {
-  padding: 10px 20px;
-  font-size: 18px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.FeedbackContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid var(--secondary-dark);
+    padding: 1rem;
 }
 
-button:hover {
-  background-color: #0069d9;
+
+.Form {
+    height: 400px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.3);
+    border-radius: 6px;
+    padding: 1rem;
 }
 
-.Input, textarea {
-  width: 20rem;
-  border: 1px solid #ccdbec;
-  box-sizing: border-box;
-  border-radius: 4px;
-  color: var(--gray);
-  outline: none;
-  font-family: var(--font-family-roboto);
+.Slider {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+}
+.InputContainer,.TextareaContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 10px;
 }
 
-.Input:required:valid {
-  border-color: green;
+/*.InputContainer {*/
+/*    height: 4rem;*/
+/*}*/
+
+.TextareaContainer {
+    height: 5rem;
+    /*margin-bottom: 1rem;*/
 }
 
-.Input:hover {
-  border-color: var(--blue-opacity);
+.Input, .Textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 6px;
+    outline: none;
+    color: var(--gray);
+    border: 1px solid var(--blue-opacity);
+    font-family: var(--font-family-roboto);
+    font-size: var(--font-size-m);
+    padding: 0.7rem;
 }
 
-textarea:hover {
-  border-color: var(--blue-opacity);
+.Input:hover, .Textarea:hover {
+    border-color: var(--blue);
 }
 
 .ErrorMessage {
-  color: var(--red);
-  font-size: var(--font-size-xxs);
+    color: var(--red);
+    font-size: var(--font-size-xxs);
 }
 
-.InputContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  /*margin: 0.1rem 0 0.4rem 0;*/
-  /*height: 3.5rem;*/
-}
-
-.Form {
-  display: flex;
-  flex-direction: column;
-  min-width: 25rem;
-  align-items: center;
-}

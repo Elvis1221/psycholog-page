@@ -4,6 +4,9 @@ import AppointmentBlock from './Blocks/appointment/Appointment.block.tsx';
 import ServicesBlock from './Blocks/services/Services.block.tsx';
 
 import css from './index.module.css';
+import FeedbackForm from './Blocks/feedBack/FeedBackForm.tsx';
+// import FeedbackSlider from './Blocks/feedBack/feedbackSlider/FeedbackSlider.tsx';
+// import { feedbackMock } from './Blocks/feedBack/feedbackSlider/feedbackMock.ts';
 
 export const Content: FC = () => {
   return (
@@ -12,6 +15,7 @@ export const Content: FC = () => {
         <PsychologistInfoBlock />
         <AppointmentBlock />
         <ServicesBlock />
+        <FeedbackForm />
       </div>
     </main>
   );

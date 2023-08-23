@@ -1,107 +1,53 @@
-.FirstPart {
-    grid-area: first
-}
+.ConsultationFormWrapper {
+    height: 100%;
+    width: 100%;
 
-.SecondPart {
-    grid-area: second
 }
-
-.AcquaintanceContent {
-    display: grid;
-    grid-template-areas:
-    'first second';
-    gap: 5px;
-    border: 1px solid bisque;
-    padding: 10px;
-    background: bisque;
-}
-
-.AcquaintanceContent > div {
-    background-color: rgba(255, 255, 255, 0.63);
-    text-align: center;
-    padding: 20px 0;
-    font-size: var(--font-size-l);
-}
-
 
 .Form {
     display: flex;
+    min-width: 20rem;
     flex-direction: column;
-    min-width: 25rem;
-    align-items: center;
 }
 
-.InputWrapper {
+.FieldsContainer {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
-input,
-textarea {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.Input {
-    width: 20rem;
-    height: 2.5rem;
-    border: 1px solid #ccdbec;
-    box-sizing: border-box;
-    border-radius: 4px;
-    color: var(--gray);
-    outline: none;
-    font-family: var(--font-family-roboto);
-}
-
-.Input:required:valid {
-    border-color: green;
-}
-
-.Input:hover {
-    border-color: var(--blue-opacity);
-}
-
-textarea:hover {
-    border-color: var(--blue-opacity);
-}
-
-.InputWrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.ErrorMessage {
-    color: var(--red);
-    font-size: var(--font-size-xxs);
-}
-
-.HiddenBlock {
-    font-size: var(--font-size-xxs);
-    visibility: hidden;
-}
-
-.InputContainer {
+.InputContainer,.TextareaContainer {
     display: flex;
     flex-direction: column;
     align-items: start;
 }
 
-.Label {
-    color: var(--blue);
+.InputContainer {
+    height: 4rem;
+}
+
+.TextareaContainer {
+    height: 5rem;
+    margin-bottom: 1rem;
+}
+
+.Input, .Textarea {
+    width: 100%;
+    border: 1px solid var(--blue-opacity);
+    box-sizing: border-box;
+    border-radius: 6px;
+    color: var(--gray);
+    outline: none;
+    font-family: var(--font-family-roboto);
+    padding: 0.7rem;
     font-size: var(--font-size-m);
 }
 
-.ConsultationFormWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 20px;
+.Input:hover, .Textarea:hover {
+    border-color: var(--blue);
+}
+
+.ErrorMessage {
+    color: var(--red);
+    font-size: var(--font-size-xxs);
 }

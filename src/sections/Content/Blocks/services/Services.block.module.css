@@ -25,7 +25,7 @@
     grid-template-areas:
     'first second third'
     'first second third';
-    gap: 0.7rem;
+    gap: 1rem;
     border: 1px solid var(--secondary-dark);
     padding: 1rem;
     background: var(--bisque);
@@ -33,6 +33,6 @@
 
 .ServicesContent > div {
     text-align: center;
-    padding: 1rem 0;
+    padding: 1rem;
 }
 

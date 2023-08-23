@@ -1,14 +1,28 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 import BlockTitle from '../../../../components/BlockTitle/BlockTitle.tsx';
 import BlockText from '../../../../components/BlockText/BlockText.tsx';
 
 import css from './PsychologistInfo.block.module.css';
+import Button, { ButtonsThemes } from '../../../../components/Button/Buttons.tsx';
+import Modal from '../../../../components/Modal/Modal.tsx';
+import ConsultationRequest from '../consultationRequest/ConsultationRequest.tsx';
+import { BLOCK_TITLE, BUTTONS_TITLE } from '../../../../constants';
 
 export const PsychologistInfoBlock: FC = () => {
+  const [isDisplayModal, setIsDisplayModal] = useState<boolean>(false);
+
+  const isCloseModal = () => {
+    setIsDisplayModal(false);
+  };
+
+  const isOpenModal = () => {
+    setIsDisplayModal(true);
+  };
+
   return (
-    <div className={css.PsychologistInfoWrapper}>
-      <BlockTitle children={'Psychologist Info Block'} />
+    <div id={'psychologistId'} className={css.PsychologistInfoWrapper}>
+      <BlockTitle children={BLOCK_TITLE.PSYCHOLOGIST} />
       <div className={css.PsychologistInfoContent}>
         <div className={css.FirstPart}>
           <BlockText>
@@ -22,6 +36,18 @@ export const PsychologistInfoBlock: FC = () => {
             laboriosam nobis non optio perferendis porro possimus quaerat quod tenetur voluptas,
             voluptate.
           </BlockText>
+          {isDisplayModal && (
+            <Modal
+              display={isDisplayModal}
+              onClose={isCloseModal}
+              children={<ConsultationRequest isCloseModal={isCloseModal} />}
+            />
+          )}
+          <Button
+            theme={ButtonsThemes.orange}
+            children={BUTTONS_TITLE.BOOK_CONSULTATION}
+            onClick={isOpenModal}
+          />
         </div>
         <div className={css.SecondPart}>
           <BlockText>

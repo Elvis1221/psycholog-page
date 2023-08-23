@@ -1,19 +1,24 @@
 :root {
-    --blue: deepskyblue;
-    --bisque: bisque;
-    --blue-opacity: rgba(75, 155, 250, 0.7);
+    --white: rgb(255,255,255);
 
-    --nav: rgba(248, 156, 14, 0.93);
+    --blue: rgb(0,191,255);
+    --bisque: bisque;
+    --blue-opacity: rgba(75, 155, 250, 0.5);
+
+    --consultation-background: linear-gradient(135deg,#fa950c 0, #c8971c 100%);
+    --consultation-btn-title: rgba(248, 156, 14);
+    --nav-hover: rgb(161, 199, 241);
 
     --grey-opacity: rgba(75, 81, 104, 0.7);
     --grey-transparent: rgba(75, 81, 104, 0.15);
     --gray: rgba(75, 81, 104, 1);
 
+    --modal-background: linear-gradient(135deg, #fcaf57 0, #3dabea 100%);
+
     --shadow-primary: rgba(60, 74, 97, 0.4);
     --secondary-dark: rgb(66, 84, 118);
 
-    --white: #ffffff;
-    --red: red;
+    --red: rgb(255, 00, 00);
 
     --disable: #a8b5beff;
 }

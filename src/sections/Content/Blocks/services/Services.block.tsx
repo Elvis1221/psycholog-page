@@ -4,11 +4,9 @@ import css from './Services.block.module.css';
 import BlockTitle from '../../../../components/BlockTitle/BlockTitle.tsx';
 import BlockText from '../../../../components/BlockText/BlockText.tsx';
 import ConsultationRequest from '../consultationRequest/ConsultationRequest.tsx';
-import FeedbackForm from '../feedBack/FeedBackForm.tsx';
-
 export const ServicesBlock: FC = () => {
   return (
-    <div className={css.ServicesWrapper}>
+    <div id={'servicesId'} className={css.ServicesWrapper}>
       <BlockTitle children={'Services Block'} />
       <div className={css.ServicesContent}>
         <div className={css.FirstPart}>
@@ -37,7 +35,9 @@ export const ServicesBlock: FC = () => {
           <ConsultationRequest />
         </div>
         <div className={css.ThirdPart}>
-          <FeedbackForm />
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, aliquid asperiores
+          consequatur eius fuga id impedit iure iusto laboriosam natus, omnis, possimus quaerat
+          quibusdam quod rem repellat sed sit voluptas?
         </div>
       </div>
     </div>

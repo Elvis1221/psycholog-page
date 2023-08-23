@@ -13,7 +13,12 @@ export const FORM_LABELS = {
 export const BUTTONS_TITLE = {
     SUBMIT: 'Submit',
     MODAL: 'Modal',
+    BOOK_CONSULTATION: 'Book a Consultation',
     CLOSE: 'Close',
+};
+
+export const BLOCK_TITLE = {
+    PSYCHOLOGIST: 'Psychologist Info Block',
 };
 
 export const PLACE_HOLDER = {
@@ -28,4 +33,5 @@ export const PLACE_HOLDER = {
 
 export const VALIDATION_MESSAGES = {
     REQUIRED_FIELD: 'This field is required',
+    LEAVE_FEEDBACK: 'Please leave feedback',
 };

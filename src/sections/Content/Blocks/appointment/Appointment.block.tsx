@@ -6,7 +6,7 @@ import BlockText from '../../../../components/BlockText/BlockText.tsx';
 
 export const AppointmentBlock: FC = () => {
   return (
-    <div className={css.AppointmentWrapper}>
+    <div id={'appointmentId'} className={css.AppointmentWrapper}>
       <BlockTitle children={'Appointment Block'} />
       <div className={css.AppointmentContent}>
         <div className={css.FirstPart}>
